@@ -2,22 +2,18 @@
 
 ![](https://github.com/jeromescuggs/defaults/blob/master/ss-1.png?raw=true)
 
+## BEWARE!
+
+these configs are still pretty messy and far from optimized - in particular the i3 config, which comes from my WSL setup and therefore has some counter-intuitive keys setup. while simply copying all the files won't (probably) break your desktop beyond repair, i would advise giving them a bit of scrutiny before using them, and tweak to your own needs. 
+
 ### misc programs
-- picom 
-  - my current preferred fork is the [ibhagwan] fork
-  - from commandline, run `pkill picom && picom -b --corner-radius 8 --experimental-backend`
-  - for i3 config: `exec_always --no-startup-id picom -b --corner-radius 8 --experimental-backend`
-- feh (`sudo apt install feh`)
+- feh
   - after setting a background image with feh, add `exec_always --no-startup-id sh $HOME/.fehbg` to i3 config
 - blurwal (`sudo pip3 install blurwal`) 
   - compliments `feh` and when running, applies a smoothly-transitioning blur effect to your background, when a user-defined number of windows are open. 
 - bpytop (https://github.com/aristocratos/bpytop)
   - requires `python3-psutil` package from apt
   - clone git repo, navigate to folder, run `make install`. 
-- polybar 
-  - easiest way to install is via the speed-ricer PPA maintained by kgilmer, for the awesome Regolith distro - a tweaked ubuntu image with a host of nifty defaults such as i3wm and conky etc. 
-  - add the PPA: `sudo add-apt-repository -y ppa:kgilmer/speed-ricer`
-  - run `sudo apt update`
-  - and finally, `sudo apt install polybar`
-
-[ibhagwan]: https://github.com/ibhagwan/picom
+- rofi (`sudo apt install rofi`)
+  - for dmenu-esque launcher, add `bindsym $mod+Shift+space exec rofi -show drun` to i3 config
+  - for the window switcher, add `bindsym $alt+Ctrl+space exec rofi -show window` to i3 config
