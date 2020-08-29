@@ -3,6 +3,10 @@
 ![](https://github.com/jeromescuggs/defaults/blob/master/ss-1.png?raw=true)
 
 ### misc programs
+- picom 
+  - my current preferred fork is the [ibhagwan] fork
+  - from commandline, run `pkill picom && picom -b --corner-radius 8 --experimental-backend`
+  - for i3 config: `exec_always --no-startup-id picom -b --corner-radius 8 --experimental-backend`
 - feh (`sudo apt install feh`)
   - after setting a background image with feh, add `exec_always --no-startup-id sh $HOME/.fehbg` to i3 config
 - blurwal (`sudo pip3 install blurwal`) 
@@ -16,3 +20,4 @@
   - run `sudo apt update`
   - and finally, `sudo apt install polybar`
 
+[ibhagwan]: https://github.com/ibhagwan/picom
